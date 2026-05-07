@@ -1,0 +1,243 @@
+// Mock data - edit these values to personalize the portfolio
+
+export const profile = {
+  name: "Manoj",
+  role: "M.Sc. Embedded Systems",
+  tagline: "Designing firmware where silicon meets logic",
+  location: "[CITY, COUNTRY]",
+  email: "your.email@domain.com",
+  github: "https://github.com/yourhandle",
+  linkedin: "https://linkedin.com/in/yourhandle",
+  resumeUrl: "#",
+  availability: "OPEN_TO_WORK",
+  clockSpeed: "168MHz",
+};
+
+export const about = {
+  bio: "Master's student specialising in embedded systems, RTOS, and bare-metal firmware. I enjoy bridging hardware and software, writing lean C for constrained MCUs, and turning signals into decisions at the edge.",
+  interests: ["RTOS", "Firmware", "DSP", "Hardware/Software Co-Design", "IoT Edge"],
+  stats: [
+    { label: "PROJECTS", value: "12" },
+    { label: "MCUS_USED", value: "08" },
+    { label: "LINES_OF_C", value: "45k+" },
+    { label: "COFFEE_CYCLES", value: "\u221E" },
+  ],
+};
+
+export const skills = [
+  {
+    group: "LANGUAGES",
+    items: [
+      { name: "C", level: 95 },
+      { name: "C++", level: 85 },
+      { name: "Python", level: 80 },
+      { name: "Rust", level: 55 },
+      { name: "Assembly (ARM/AVR)", level: 70 },
+    ],
+  },
+  {
+    group: "HARDWARE",
+    items: [
+      { name: "STM32 / ARM Cortex-M", level: 90 },
+      { name: "ESP32", level: 85 },
+      { name: "AVR / ATmega", level: 75 },
+      { name: "FPGA (Verilog)", level: 60 },
+      { name: "Raspberry Pi", level: 80 },
+    ],
+  },
+  {
+    group: "PROTOCOLS",
+    items: [
+      { name: "I2C / SPI / UART", level: 95 },
+      { name: "CAN / LIN", level: 80 },
+      { name: "MQTT / CoAP", level: 75 },
+      { name: "BLE / Wi-Fi", level: 78 },
+      { name: "Modbus", level: 65 },
+    ],
+  },
+  {
+    group: "TOOLING",
+    items: [
+      { name: "FreeRTOS / Zephyr", level: 85 },
+      { name: "KiCad / Altium", level: 70 },
+      { name: "Git / CI", level: 88 },
+      { name: "Oscilloscope / LogicAn", level: 82 },
+      { name: "Linux / Yocto", level: 72 },
+    ],
+  },
+];
+
+export const projects = [
+  {
+    id: "PRJ_01",
+    title: "Quadcopter Flight Controller",
+    summary: "Bare-metal STM32F4 firmware running a 1kHz PID loop with MPU6050 sensor fusion and SBUS receiver input.",
+    stack: ["STM32F4", "C", "DMA", "PID", "IMU"],
+    role: "FIRMWARE",
+    year: "2025",
+    repo: "https://github.com/yourhandle/quadcopter-fc",
+    demo: "",
+  },
+  {
+    id: "PRJ_02",
+    title: "Edge ML Keyword Spotter",
+    summary: "Quantised CNN running on ESP32-S3 for on-device keyword recognition under 200ms latency.",
+    stack: ["ESP32-S3", "TFLM", "C++", "I2S"],
+    role: "ML/EMBEDDED",
+    year: "2025",
+    repo: "https://github.com/yourhandle/edge-kws",
+    demo: "https://example.com/kws-demo",
+  },
+  {
+    id: "PRJ_03",
+    title: "CAN Bus Diagnostics Tool",
+    summary: "Portable handheld analyser to sniff, inject and decode automotive CAN frames with on-device UI.",
+    stack: ["STM32", "CAN", "FreeRTOS", "LVGL"],
+    role: "HW + FW",
+    year: "2024",
+    repo: "https://github.com/yourhandle/can-scope",
+    demo: "",
+  },
+  {
+    id: "PRJ_04",
+    title: "Preemptive Micro-RTOS",
+    summary: "Educational cooperative/preemptive scheduler for Cortex-M0 with semaphores, queues and tickless idle.",
+    stack: ["ARM Cortex-M0", "C", "RTOS", "ASM"],
+    role: "SYSTEMS",
+    year: "2024",
+    repo: "https://github.com/yourhandle/micro-rtos",
+    demo: "",
+  },
+  {
+    id: "PRJ_05",
+    title: "Smart Energy Meter",
+    summary: "Low-power LoRaWAN node measuring three-phase power and reporting to a private gateway every 15 min.",
+    stack: ["STM32L0", "LoRaWAN", "Low-Power"],
+    role: "FIRMWARE",
+    year: "2024",
+    repo: "https://github.com/yourhandle/lora-meter",
+    demo: "",
+  },
+  {
+    id: "PRJ_06",
+    title: "FPGA UART + VGA Demo",
+    summary: "Verilog implementation of UART echo and VGA text terminal on a Lattice iCE40 dev board.",
+    stack: ["Verilog", "iCE40", "FPGA"],
+    role: "DIGITAL_DESIGN",
+    year: "2023",
+    repo: "https://github.com/yourhandle/ice40-vga",
+    demo: "",
+  },
+];
+
+export const experience = [
+  {
+    id: "EXP_01",
+    role: "Research Assistant \u2014 Embedded ML",
+    org: "[UNIVERSITY_LAB]",
+    period: "2024 \u2014 PRESENT",
+    bullets: [
+      "Porting TinyML models to Cortex-M33 with CMSIS-NN.",
+      "Benchmarking inference energy per frame across 4 MCUs.",
+    ],
+  },
+  {
+    id: "EXP_02",
+    role: "Firmware Intern",
+    org: "[COMPANY_NAME]",
+    period: "SUMMER 2024",
+    bullets: [
+      "Built a BLE-based OTA update pipeline for wearable device.",
+      "Reduced boot time by 38% via linker-script and init refactor.",
+    ],
+  },
+  {
+    id: "EXP_03",
+    role: "Electronics Teaching Assistant",
+    org: "[UNIVERSITY_DEPT]",
+    period: "2023 \u2014 2024",
+    bullets: [
+      "Mentored 40+ students through ARM assembly and C labs.",
+      "Designed grading scripts and automated firmware test rigs.",
+    ],
+  },
+];
+
+export const education = [
+  {
+    id: "EDU_01",
+    degree: "M.Sc. Embedded Systems",
+    school: "[GRADUATE_UNIVERSITY]",
+    period: "2024 \u2014 2026",
+    grade: "GPA: 3.9 / 4.0",
+    notes: [
+      "Focus: Real-time systems, digital signal processing, hardware/software co-design.",
+      "Thesis (WIP): Energy-aware scheduling for TinyML workloads on Cortex-M.",
+    ],
+  },
+  {
+    id: "EDU_02",
+    degree: "B.Eng. Electronics & Communication",
+    school: "[UNDERGRAD_UNIVERSITY]",
+    period: "2019 \u2014 2023",
+    grade: "First Class \u2014 8.7 / 10",
+    notes: [
+      "Thesis: Low-power wake-on-sound sensor node with MEMS mic + ML.",
+      "IEEE student branch \u2014 hardware lead; built 3 workshops on STM32/FreeRTOS.",
+    ],
+  },
+];
+
+export const certifications = [
+  {
+    id: "CERT_01",
+    name: "ARM Accredited Engineer \u2014 Cortex-M",
+    issuer: "ARM Education",
+    date: "2025",
+    credentialId: "AAE-CM-000000",
+    url: "https://www.arm.com/resources/education",
+  },
+  {
+    id: "CERT_02",
+    name: "FreeRTOS Real-Time Engineering",
+    issuer: "AWS / FreeRTOS",
+    date: "2024",
+    credentialId: "FRTOS-000000",
+    url: "https://www.freertos.org/",
+  },
+  {
+    id: "CERT_03",
+    name: "Linux Kernel Development \u2014 LFD103",
+    issuer: "The Linux Foundation",
+    date: "2024",
+    credentialId: "LF-000000",
+    url: "https://training.linuxfoundation.org/",
+  },
+  {
+    id: "CERT_04",
+    name: "Yocto Project Essentials",
+    issuer: "Bootlin",
+    date: "2024",
+    credentialId: "BL-YOCTO-0000",
+    url: "https://bootlin.com/",
+  },
+  {
+    id: "CERT_05",
+    name: "CompTIA Linux+",
+    issuer: "CompTIA",
+    date: "2023",
+    credentialId: "COMP-LX-0000",
+    url: "https://www.comptia.org/",
+  },
+];
+
+export const navItems = [
+  { id: "core", label: "CORE", addr: "0x00" },
+  { id: "about", label: "ABOUT", addr: "0x10" },
+  { id: "skills", label: "SKILLS", addr: "0x20" },
+  { id: "projects", label: "PROJECTS", addr: "0x30" },
+  { id: "experience", label: "EXP", addr: "0x40" },
+  { id: "education", label: "EDU", addr: "0x50" },
+  { id: "certifications", label: "CERTS", addr: "0x60" },
+  { id: "contact", label: "I/O", addr: "0x70" },
+];

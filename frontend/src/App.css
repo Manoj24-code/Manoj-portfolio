@@ -1,0 +1,172 @@
+/* Embedded Systems Portfolio — architecture theme */
+
+:root {
+  --bg: #0a0b0d;
+  --bg-elev: #111316;
+  --bg-card: #15171b;
+  --line: #22262d;
+  --line-strong: #2e333c;
+  --text: #e6e7ea;
+  --text-dim: #8a8f98;
+  --text-muted: #5a606a;
+  --accent: #f5b544;      /* amber signal */
+  --accent-2: #4ad1c8;    /* cyan data */
+  --danger: #ef5a6f;
+  --ok: #7ad07d;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { background: var(--bg); color: var(--text); }
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(245,181,68,0.05) 0, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(74,209,200,0.04) 0, transparent 45%),
+    linear-gradient(var(--bg), var(--bg));
+  background-attachment: fixed;
+}
+
+.mono { font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace; }
+
+/* Grid background pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Section block (IC-style module) */
+.block {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.block:hover { border-color: var(--line-strong); box-shadow: 0 0 0 1px rgba(245,181,68,0.08); }
+
+.block-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px dashed var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.block-title-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+.block-title-dot.cyan { background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); }
+
+.pin {
+  position: absolute; width: 10px; height: 2px; background: var(--line-strong);
+}
+.pin.left { left: -10px; } .pin.right { right: -10px; }
+
+/* Animated binary stream */
+.bin-stream {
+  position: relative;
+  height: 40px; overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--accent);
+  opacity: 0.55;
+  display: flex; align-items: center;
+}
+.bin-stream::before, .bin-stream::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2;
+  pointer-events: none;
+}
+.bin-stream::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.bin-stream::after  { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+
+.bin-track {
+  white-space: nowrap;
+  animation: slide-left 22s linear infinite;
+  will-change: transform;
+}
+.bin-track.reverse { animation: slide-right 28s linear infinite; color: var(--accent-2); }
+.bin-track.fast { animation-duration: 14s; }
+
+@keyframes slide-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes slide-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* Signal line with dot */
+.signal-line {
+  position: relative;
+  height: 1px; background: var(--line-strong); margin: 4px 0;
+}
+.signal-dot {
+  position: absolute; top: -3px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: sig-move 3s linear infinite;
+}
+@keyframes sig-move {
+  from { left: -2%; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  to   { left: 102%; opacity: 0; }
+}
+
+/* Blinking LED */
+.led {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 10px var(--ok);
+  animation: led-blink 1.6s ease-in-out infinite;
+}
+@keyframes led-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--line-strong);
+  background: transparent; color: var(--text);
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: 3px; cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary {
+  background: var(--accent); color: #0a0b0d; border-color: var(--accent);
+}
+.btn.primary:hover { background: #ffc658; border-color: #ffc658; color: #0a0b0d; }
+
+/* Chip */
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.08em;
+  color: var(--text-dim);
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.015);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* Section scroll offset for sticky nav */
+section[id] { scroll-margin-top: 90px; }
+
+/* Selection */
+::selection { background: rgba(245,181,68,0.3); color: #fff; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #1e2127; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2a2e36; }
